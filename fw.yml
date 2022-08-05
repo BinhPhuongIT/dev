@@ -8,6 +8,7 @@
       community.general.ufw:
         state: enabled
         policy: allow
+        
     - name: ufw allow incoming
       community.general.ufw:
         direction: incoming
@@ -16,8 +17,8 @@
         
     - name: deny access to prod
       community.general.ufw:
+        rule: deny
         direction: out
         proto: any
-        policy: deny
         src: any
         dest: 10.0.236.0/24
