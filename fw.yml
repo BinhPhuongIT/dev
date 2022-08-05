@@ -1,0 +1,10 @@
+---
+- name: Setup admin production UFW
+  hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: Allow everything and enable UFW
+      community.general.ufw:
+        state: enabled
+        policy: allow
